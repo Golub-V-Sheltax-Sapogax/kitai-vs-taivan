@@ -30,3 +30,11 @@ def user2_input():
                 print("Ячейка уже занята, попробуй еще") 
         else: 
             print("Ваш ввод не распознан, попробуй еще")
+
+def empty_cell(row, col): 
+    cell = field[row][col] 
+    if (cell == '(-_-)'): 
+        return True 
+    else: 
+        return False 
+
