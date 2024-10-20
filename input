@@ -38,3 +38,12 @@ def empty_cell(row, col):
     else: 
         return False 
 
+def count_empty_cells(): 
+    count = 0 
+    for row in field: 
+        for cell in row: 
+            if cell == '(-_-)': 
+                count += 1 
+    return count 
+
+
