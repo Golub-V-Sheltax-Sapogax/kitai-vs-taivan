@@ -2,3 +2,31 @@ def fprint(field):
     print('    0     1     2   ') 
     for i in range(N): 
         print(i, ' '.join(field[i])) 
+
+def user1_input(): 
+    user_cross = [] 
+    while True: 
+        user_cross = list(map(int, list(input("Ваш ход, великий партия Kитай, формат (строка колонка): ").split()))) 
+        if len(user_cross) == 2 and all(list(map(lambda x: x in range(N), user_cross))): 
+            row, col = user_cross[0], user_cross[1] 
+            if empty_cell(row, col): 
+                print("Ваш выбор, великий партия Kитай: ", user_cross) 
+                return user_cross 
+            else: 
+                print("Ячейка уже занята, попробуй еще") 
+        else: 
+            print("Ваш ввод не распознан, попробуй еще")
+
+def user2_input(): 
+    user_cross = [] 
+    while True: 
+        user_cross = list(map(int, list(input("Ваш ход, глюпий партия Тайвань, формат (строка колонка): ").split()))) 
+        if len(user_cross) == 2 and all(list(map(lambda x: x in range(N), user_cross))): 
+            row, col = user_cross[0], user_cross[1] 
+            if empty_cell(row, col): 
+                print("Ваш выбор, глюпий партия Тайвань: ", user_cross) 
+                return user_cross 
+            else: 
+                print("Ячейка уже занята, попробуй еще") 
+        else: 
+            print("Ваш ввод не распознан, попробуй еще")
