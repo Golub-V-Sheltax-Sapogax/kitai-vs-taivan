@@ -102,3 +102,43 @@ def check_win(sym):
     return count 
 
 
+otv="да"
+while otv == "да" or otv == "ДА":
+
+    N = 3 
+    field = [['(-_-)' for i in range(N)] for j in range(N)] 
+    k_h = 9
+
+    while count_empty_cells() >= 0:
+        
+        
+        fprint(field) 
+        user_cross = user1_input() 
+        row, col = user_cross[0], user_cross[1] 
+        field[row][col] = '(^_^)'
+        k_h -= 1
+            
+        if check_win('(^_^)'): 
+            fprint(field) 
+            print("Поздравляю, велиуий партия гордится вами, вам выдана кошка-жена и риска миса") 
+            break 
+        
+        if (k_h == 0):
+            fprint(field) 
+            print("Поздравляю, партии перебили друг друга, и рис прокис")
+            break
+        
+        fprint(field)
+        user_cross = user2_input() 
+        row, col = user_cross[0], user_cross[1] 
+        field[row][col] = '(o_o)'
+        k_h -= 1
+        
+        if check_win('(o_o)'): 
+            fprint(field) 
+            print("Поздравляю, партия Тайвань довольна вами, вам выдана собака-жена и чачка пипсов") 
+            break
+
+    print("Конец игры")
+    print("Хтите снова побороться за миска рис? (ответы: да или ДА)")
+    otv=str(input())
